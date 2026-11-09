@@ -1,0 +1,122 @@
+ORQUESTA · REPORTE DE ANÁLISIS
+Generado: 2026-11-09 01:45:10
+================================================================
+
+Sonidos activos: 489   Descartados: 58   Capacidad por instrumento: 2500
+
+■ FLAUTA  (carpeta: flautas · prefijo: f)
+   Archivos: 270 · activos: 214 · descartados: 56 · capacidad: 214/2500 (8.6%)
+   Números que faltan (1 al último): ninguno
+   × flautas/f1.mp3  [mudo] vacío o casi sin sonido
+   × flautas/flautas/f1.mp3  [mudo] vacío o casi sin sonido
+   × flautas/flautas/f2.mp3  [copia_exacta] idéntico a flautas/f2.mp3
+   × flautas/flautas/f3.mp3  [copia_exacta] idéntico a flautas/f3.mp3
+   × flautas/flautas/f4.mp3  [copia_exacta] idéntico a flautas/f4.mp3
+   × flautas/flautas/f5.mp3  [copia_exacta] idéntico a flautas/f5.mp3
+   × flautas/flautas/f6.mp3  [copia_exacta] idéntico a flautas/f6.mp3
+   × flautas/flautas/f7.mp3  [copia_exacta] idéntico a flautas/f7.mp3
+   × flautas/flautas/f8.mp3  [copia_exacta] idéntico a flautas/f8.mp3
+   × flautas/flautas/f9.mp3  [copia_exacta] idéntico a flautas/f9.mp3
+   × flautas/flautas/f10.mp3  [copia_exacta] idéntico a flautas/f10.mp3
+   × flautas/flautas/f11.mp3  [copia_exacta] idéntico a flautas/f11.mp3
+   × flautas/flautas/f12.mp3  [copia_exacta] idéntico a flautas/f12.mp3
+   × flautas/flautas/f13.mp3  [copia_exacta] idéntico a flautas/f13.mp3
+   × flautas/flautas/f14.mp3  [copia_exacta] idéntico a flautas/f14.mp3
+   × flautas/flautas/f15.mp3  [copia_exacta] idéntico a flautas/f15.mp3
+   × flautas/flautas/f16.mp3  [copia_exacta] idéntico a flautas/f16.mp3
+   × flautas/flautas/f17.mp3  [copia_exacta] idéntico a flautas/f17.mp3
+   × flautas/flautas/f18.mp3  [copia_exacta] idéntico a flautas/f18.mp3
+   × flautas/flautas/f19.mp3  [copia_exacta] idéntico a flautas/f19.mp3
+   × flautas/flautas/f20.mp3  [copia_exacta] idéntico a flautas/f20.mp3
+   × flautas/flautas/f21.mp3  [copia_exacta] idéntico a flautas/f21.mp3
+   × flautas/flautas/f22.mp3  [copia_exacta] idéntico a flautas/f22.mp3
+   × flautas/flautas/f23.mp3  [copia_exacta] idéntico a flautas/f23.mp3
+   × flautas/flautas/f24.mp3  [copia_exacta] idéntico a flautas/f24.mp3
+   × flautas/flautas/f25.mp3  [copia_exacta] idéntico a flautas/f25.mp3
+   × flautas/flautas/f26.mp3  [copia_exacta] idéntico a flautas/f26.mp3
+   × flautas/flautas/f27.mp3  [copia_exacta] idéntico a flautas/f27.mp3
+   × flautas/flautas/f28.mp3  [copia_exacta] idéntico a flautas/f28.mp3
+   × flautas/flautas/f29.mp3  [copia_exacta] idéntico a flautas/f29.mp3
+   × flautas/flautas/f30.mp3  [copia_exacta] idéntico a flautas/f30.mp3
+   × flautas/flautas/f31.mp3  [copia_exacta] idéntico a flautas/f31.mp3
+   × flautas/flautas/f32.mp3  [copia_exacta] idéntico a flautas/f32.mp3
+   × flautas/flautas/f33.mp3  [copia_exacta] idéntico a flautas/f33.mp3
+   × flautas/flautas/f34.mp3  [copia_exacta] idéntico a flautas/f34.mp3
+   × flautas/flautas/f35.mp3  [copia_exacta] idéntico a flautas/f35.mp3
+   × flautas/flautas/f36.mp3  [copia_exacta] idéntico a flautas/f36.mp3
+   × flautas/flautas/f37.mp3  [copia_exacta] idéntico a flautas/f37.mp3
+   × flautas/flautas/f38.mp3  [copia_exacta] idéntico a flautas/f38.mp3
+   × flautas/flautas/f39.mp3  [copia_exacta] idéntico a flautas/f39.mp3
+   × flautas/flautas/f40.mp3  [copia_exacta] idéntico a flautas/f40.mp3
+   × flautas/flautas/f41.mp3  [copia_exacta] idéntico a flautas/f41.mp3
+   × flautas/flautas/f42.mp3  [copia_exacta] idéntico a flautas/f42.mp3
+   × flautas/flautas/f43.mp3  [copia_exacta] idéntico a flautas/f43.mp3
+   × flautas/flautas/f44.mp3  [copia_exacta] idéntico a flautas/f44.mp3
+   × flautas/flautas/f45.mp3  [copia_exacta] idéntico a flautas/f45.mp3
+   × flautas/flautas/f46.mp3  [copia_exacta] idéntico a flautas/f46.mp3
+   × flautas/flautas/f47.mp3  [copia_exacta] idéntico a flautas/f47.mp3
+   × flautas/flautas/f48.mp3  [copia_exacta] idéntico a flautas/f48.mp3
+   × flautas/flautas/f49.mp3  [copia_exacta] idéntico a flautas/f49.mp3
+   × flautas/flautas/f50.mp3  [copia_exacta] idéntico a flautas/f50.mp3
+   × flautas/flautas/f51.mp3  [copia_exacta] idéntico a flautas/f51.mp3
+   × flautas/flautas/f52.mp3  [copia_exacta] idéntico a flautas/f52.mp3
+   × flautas/flautas/f53.mp3  [copia_exacta] idéntico a flautas/f53.mp3
+   × flautas/flautas/f54.mp3  [copia_exacta] idéntico a flautas/f54.mp3
+   × flautas/flautas/f55.mp3  [copia_exacta] idéntico a flautas/f55.mp3
+
+■ GUITARRA  (carpeta: guitarras · prefijo: guit)
+   Archivos: 59 · activos: 59 · descartados: 0 · capacidad: 59/2500 (2.4%)
+   Números que faltan (1 al último): ninguno
+
+■ GUITARRA ELÉCTRICA  (carpeta: electricas · prefijo: electri)
+   Archivos: 53 · activos: 53 · descartados: 0 · capacidad: 53/2500 (2.1%)
+   Números que faltan (1 al último): ninguno
+
+■ PIANO  (carpeta: pianos · prefijo: p)
+   Archivos: 53 · activos: 53 · descartados: 0 · capacidad: 53/2500 (2.1%)
+   Números que faltan (1 al último): ninguno
+
+■ TAMBORES  (carpeta: tambores · prefijo: tam)
+   Archivos: 13 · activos: 13 · descartados: 0 · capacidad: 13/2500 (0.5%)
+   Números que faltan (1 al último): ninguno
+
+■ TIMBALES  (carpeta: timbales · prefijo: tim)
+   Archivos: 55 · activos: 54 · descartados: 1 · capacidad: 54/2500 (2.2%)
+   Números que faltan (1 al último): ninguno
+   × timbales/tim37 (2).mp3  [copia_exacta] idéntico a timbales/tim54.mp3
+
+■ TROMPETA  (carpeta: trompetas · prefijo: t)
+   Archivos: 44 · activos: 43 · descartados: 1 · capacidad: 43/2500 (1.7%)
+   Números que faltan (1 al último): 33, 35-38
+   × trompetas/t45.mp3  [ilegible] no se pudo leer o dura menos de 20 ms
+
+■ ACORDEÓN  (carpeta: acordeones · prefijo: acor)
+   Pendiente: crea/llena la carpeta con acor1, acor2 ... y ejecuta analizar.py
+
+■ ELECTRÓNICOS  (carpeta: electronicos · prefijo: elec)
+   Pendiente: crea/llena la carpeta con elec1, elec2 ... y ejecuta analizar.py
+
+■ JOROPO  (carpeta: joropo · prefijo: jor)
+   Pendiente: crea/llena la carpeta con jor1, jor2 ... y ejecuta analizar.py
+
+■ MARIMBA  (carpeta: marimbas · prefijo: mar)
+   Pendiente: crea/llena la carpeta con mar1, mar2 ... y ejecuta analizar.py
+
+■ REDOBLANTE  (carpeta: redoblantes · prefijo: redo)
+   Pendiente: crea/llena la carpeta con redo1, redo2 ... y ejecuta analizar.py
+
+■ XILÓFONO  (carpeta: xilofonos · prefijo: xil)
+   Pendiente: crea/llena la carpeta con xil1, xil2 ... y ejecuta analizar.py
+
+MEJORES AUDIOS POR ESTILO (puntaje 0-9)
+----------------------------------------------------------------
+rock      : electri35(9), electri44(9), electri3(8), electri4(8), electri19(8), electri20(8), electri21(8), electri22(8), electri23(8), electri24(8)
+pop       : guit2(7), guit3(7), guit8(7), guit13(7), guit14(7), guit26(7), guit30(7), guit36(7), guit39(7), guit40(7)
+balada    : p32(9), guit22(8), p3(8), p5(8), p9(8), p10(8), p11(8), p13(8), p17(8), p19(8)
+cumbia    : tim4(8), tim5(8), tim9(8), tim10(8), tim11(8), tim14(8), tim15(8), tim16(8), tim17(8), tim19(8)
+merengue  : tam10(9), tam13(9), tam2(8), tam3(8), tam4(8), tam5(8), tam6(8), tam8(8), tam9(8), tam11(8)
+charanga  : f86(9), f93(9), f107(9), f110(9), f140(9), f155(9), f157(9), f195(9), f3(8), f4(8)
+clasica   : p30(9), p32(9), p40(9), p44(9), f6(8), f7(8), f12(8), f21(8), f27(8), f29(8)
+jazz      : p3(8), p4(8), p5(8), p6(8), p10(8), p11(8), p13(8), p16(8), p17(8), p18(8)
+salsa     : tim14(9), tim22(9), tim23(9), tim29(9), t34(9), p4(8), p5(8), p6(8), p7(8), p16(8)
+cristiana : p17(9), p18(9), p23(9), p30(9), p40(9), p41(9), p42(9), p44(9), guit8(8), guit14(8)

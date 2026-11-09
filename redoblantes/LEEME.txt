@@ -1,0 +1,3 @@
+Carpeta de Redoblante.
+Mete aquí los audios numerados: redo1.mp3, redo2.mp3, redo3.mp3 ... hasta 2500.
+Luego ejecuta:  python analizar.py

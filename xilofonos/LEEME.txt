@@ -1,0 +1,3 @@
+Carpeta de Xilófono.
+Mete aquí los audios numerados: xil1.mp3, xil2.mp3, xil3.mp3 ... hasta 2500.
+Luego ejecuta:  python analizar.py

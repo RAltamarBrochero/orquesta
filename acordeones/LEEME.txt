@@ -1,0 +1,3 @@
+Carpeta de Acordeón.
+Mete aquí los audios numerados: acor1.mp3, acor2.mp3, acor3.mp3 ... hasta 2500.
+Luego ejecuta:  python analizar.py

@@ -1,0 +1,3 @@
+Carpeta de Electrónicos.
+Mete aquí los audios numerados: elec1.mp3, elec2.mp3, elec3.mp3 ... hasta 2500.
+Luego ejecuta:  python analizar.py

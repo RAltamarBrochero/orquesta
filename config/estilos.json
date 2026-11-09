@@ -1,0 +1,1679 @@
+{
+ "_ayuda": "Aquí se define cada estilo. 'perfil' = [valor ideal, tolerancia, peso] de cada característica del audio. 'instrumentos' = afinidad 0-1. 'pistas' = capas de la canción con su patrón por energía (X = suena una frase, . = silencio; 4 casillas = 2 compases). Al cambiar algo, ejecuta analizar.py de nuevo.",
+ "duracion_segundos": 300,
+ "estilos": {
+  "rock": {
+   "nombre": "Rock",
+   "bpm": [
+    116,
+    138
+   ],
+   "menor": 0.45,
+   "swing": 0,
+   "energia": {
+    "intro": 0.4,
+    "verso": 0.6,
+    "preestribillo": 0.75,
+    "estribillo": 1.0,
+    "puente": 0.55,
+    "solo": 0.9,
+    "outro": 0.3
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "guitarra_electrica": 1,
+    "tambores": 1,
+    "redoblante": 0.9,
+    "guitarra": 0.7,
+    "electronicos": 0.4,
+    "piano": 0.35,
+    "timbales": 0.25,
+    "trompeta": 0.15,
+    "flauta": 0.1
+   },
+   "perfil": {
+    "int": [
+     0.8,
+     0.3,
+     2
+    ],
+    "bril": [
+     2200,
+     700,
+     1.5
+    ],
+    "dens": [
+     8,
+     2.5,
+     1
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1
+    ],
+    "tono": [
+     0.3,
+     0.5,
+     0.3
+    ],
+    "sost": [
+     0.8,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.3,
+     0.25,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 1,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.6,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "pop": {
+   "nombre": "Pop",
+   "bpm": [
+    108,
+    124
+   ],
+   "menor": 0.3,
+   "swing": 0,
+   "energia": {
+    "intro": 0.35,
+    "verso": 0.55,
+    "preestribillo": 0.7,
+    "estribillo": 0.9,
+    "puente": 0.5,
+    "solo": 0.8,
+    "outro": 0.3
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "piano": 0.8,
+    "guitarra": 0.8,
+    "electronicos": 0.8,
+    "tambores": 0.7,
+    "guitarra_electrica": 0.6,
+    "flauta": 0.35,
+    "trompeta": 0.3,
+    "timbales": 0.3
+   },
+   "perfil": {
+    "int": [
+     0.55,
+     0.3,
+     1.5
+    ],
+    "bril": [
+     1600,
+     600,
+     1
+    ],
+    "dens": [
+     7,
+     3,
+     1
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1
+    ],
+    "tono": [
+     0.5,
+     0.5,
+     0.5
+    ],
+    "sost": [
+     0.8,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.35,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.55,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "balada": {
+   "nombre": "Balada",
+   "bpm": [
+    90,
+    102
+   ],
+   "menor": 0.5,
+   "swing": 0,
+   "energia": {
+    "intro": 0.25,
+    "verso": 0.4,
+    "preestribillo": 0.55,
+    "estribillo": 0.75,
+    "puente": 0.35,
+    "solo": 0.6,
+    "outro": 0.2
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "piano": 1,
+    "guitarra": 0.9,
+    "flauta": 0.6,
+    "acordeon": 0.4,
+    "guitarra_electrica": 0.35,
+    "marimba": 0.3,
+    "trompeta": 0.25,
+    "tambores": 0.25,
+    "timbales": 0.1
+   },
+   "perfil": {
+    "int": [
+     0.25,
+     0.28,
+     2
+    ],
+    "bril": [
+     1350,
+     400,
+     1.5
+    ],
+    "dens": [
+     6,
+     2.5,
+     1.5
+    ],
+    "reg": [
+     0.85,
+     0.25,
+     1
+    ],
+    "tono": [
+     0.7,
+     0.4,
+     1
+    ],
+    "sost": [
+     0.95,
+     0.2,
+     1
+    ],
+    "bajo": [
+     0.4,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.6,
+     "patrones": {
+      "1": "....",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "....",
+      "2": "X...",
+      "3": "XX.."
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.5,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "cumbia": {
+   "nombre": "Cumbia",
+   "bpm": [
+    94,
+    108
+   ],
+   "menor": 0.35,
+   "swing": 0,
+   "energia": {
+    "intro": 0.4,
+    "verso": 0.65,
+    "preestribillo": 0.75,
+    "estribillo": 0.9,
+    "puente": 0.55,
+    "solo": 0.85,
+    "outro": 0.3
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "acordeon": 1,
+    "timbales": 0.9,
+    "tambores": 0.8,
+    "guitarra": 0.8,
+    "flauta": 0.7,
+    "marimba": 0.5,
+    "electronicos": 0.5,
+    "trompeta": 0.4,
+    "piano": 0.4
+   },
+   "perfil": {
+    "int": [
+     0.6,
+     0.3,
+     1
+    ],
+    "bril": [
+     1700,
+     600,
+     1
+    ],
+    "dens": [
+     7.5,
+     2,
+     1.5
+    ],
+    "reg": [
+     0.85,
+     0.2,
+     2
+    ],
+    "tono": [
+     0.3,
+     0.5,
+     0.4
+    ],
+    "sost": [
+     0.8,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.45,
+     0.3,
+     1
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 1,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.75,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.55,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "merengue": {
+   "nombre": "Merengue",
+   "bpm": [
+    140,
+    160
+   ],
+   "menor": 0.2,
+   "swing": 0,
+   "energia": {
+    "intro": 0.5,
+    "verso": 0.75,
+    "preestribillo": 0.85,
+    "estribillo": 1.0,
+    "puente": 0.65,
+    "solo": 0.95,
+    "outro": 0.4
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "tambores": 1,
+    "acordeon": 1,
+    "redoblante": 0.9,
+    "timbales": 0.8,
+    "trompeta": 0.8,
+    "piano": 0.5,
+    "guitarra": 0.5,
+    "flauta": 0.3
+   },
+   "perfil": {
+    "int": [
+     0.8,
+     0.25,
+     1.5
+    ],
+    "bril": [
+     1900,
+     600,
+     1
+    ],
+    "dens": [
+     9,
+     2,
+     2
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1.5
+    ],
+    "tono": [
+     0.3,
+     0.5,
+     0.3
+    ],
+    "sost": [
+     0.75,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.4,
+     0.3,
+     0.7
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 1,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.75,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.6,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "charanga": {
+   "nombre": "Charanga",
+   "bpm": [
+    124,
+    144
+   ],
+   "menor": 0.3,
+   "swing": 0.05,
+   "energia": {
+    "intro": 0.4,
+    "verso": 0.6,
+    "preestribillo": 0.7,
+    "estribillo": 0.85,
+    "puente": 0.5,
+    "solo": 0.8,
+    "outro": 0.3
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "flauta": 1,
+    "piano": 0.9,
+    "timbales": 0.9,
+    "tambores": 0.5,
+    "trompeta": 0.4,
+    "guitarra": 0.4
+   },
+   "perfil": {
+    "int": [
+     0.55,
+     0.3,
+     1
+    ],
+    "bril": [
+     1500,
+     500,
+     1.5
+    ],
+    "dens": [
+     8,
+     2.5,
+     1
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1.5
+    ],
+    "tono": [
+     0.6,
+     0.4,
+     1
+    ],
+    "sost": [
+     0.9,
+     0.2,
+     0.5
+    ],
+    "bajo": [
+     0.3,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.65,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.5,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "clasica": {
+   "nombre": "Música clásica",
+   "bpm": [
+    92,
+    116
+   ],
+   "menor": 0.5,
+   "swing": 0,
+   "energia": {
+    "intro": 0.25,
+    "verso": 0.45,
+    "preestribillo": 0.6,
+    "estribillo": 0.8,
+    "puente": 0.4,
+    "solo": 0.65,
+    "outro": 0.2
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Tema A",
+     "verso",
+     3
+    ],
+    [
+     "Tema B",
+     "estribillo",
+     3
+    ],
+    [
+     "Tema A",
+     "verso",
+     3
+    ],
+    [
+     "Tema B",
+     "estribillo",
+     3
+    ],
+    [
+     "Desarrollo",
+     "puente",
+     2
+    ],
+    [
+     "Tema B final",
+     "estribillo",
+     3
+    ],
+    [
+     "Coda",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "piano": 1,
+    "flauta": 0.9,
+    "guitarra": 0.6,
+    "trompeta": 0.5,
+    "marimba": 0.4,
+    "xilofono": 0.4,
+    "timbales": 0.15,
+    "tambores": 0.05,
+    "guitarra_electrica": 0.05,
+    "electronicos": 0.05
+   },
+   "perfil": {
+    "int": [
+     0.35,
+     0.3,
+     1.5
+    ],
+    "bril": [
+     1400,
+     450,
+     1
+    ],
+    "dens": [
+     6.5,
+     3,
+     1
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1
+    ],
+    "tono": [
+     0.85,
+     0.3,
+     2
+    ],
+    "sost": [
+     0.95,
+     0.2,
+     1
+    ],
+    "bajo": [
+     0.3,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.7,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "....",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.45,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "jazz": {
+   "nombre": "Jazz",
+   "bpm": [
+    120,
+    150
+   ],
+   "menor": 0.45,
+   "swing": 0.25,
+   "energia": {
+    "intro": 0.35,
+    "verso": 0.55,
+    "preestribillo": 0.65,
+    "estribillo": 0.8,
+    "puente": 0.5,
+    "solo": 0.9,
+    "outro": 0.3
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Tema A",
+     "verso",
+     3
+    ],
+    [
+     "Tema B",
+     "estribillo",
+     3
+    ],
+    [
+     "Tema A",
+     "verso",
+     3
+    ],
+    [
+     "Tema B",
+     "estribillo",
+     3
+    ],
+    [
+     "Desarrollo",
+     "puente",
+     2
+    ],
+    [
+     "Tema B final",
+     "estribillo",
+     3
+    ],
+    [
+     "Coda",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "piano": 1,
+    "trompeta": 0.9,
+    "guitarra": 0.6,
+    "guitarra_electrica": 0.6,
+    "flauta": 0.6,
+    "tambores": 0.6,
+    "timbales": 0.4,
+    "marimba": 0.4,
+    "xilofono": 0.4
+   },
+   "perfil": {
+    "int": [
+     0.5,
+     0.3,
+     1
+    ],
+    "bril": [
+     1700,
+     550,
+     1
+    ],
+    "dens": [
+     7,
+     3,
+     1
+    ],
+    "reg": [
+     0.55,
+     0.3,
+     2
+    ],
+    "tono": [
+     0.7,
+     0.4,
+     1
+    ],
+    "sost": [
+     0.85,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.35,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.7,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.55,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "salsa": {
+   "nombre": "Salsa",
+   "bpm": [
+    150,
+    176
+   ],
+   "menor": 0.45,
+   "swing": 0,
+   "energia": {
+    "intro": 0.45,
+    "verso": 0.7,
+    "preestribillo": 0.8,
+    "estribillo": 1.0,
+    "puente": 0.65,
+    "solo": 0.95,
+    "outro": 0.35
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "timbales": 1,
+    "trompeta": 1,
+    "piano": 1,
+    "tambores": 0.7,
+    "flauta": 0.5,
+    "redoblante": 0.5,
+    "guitarra": 0.3,
+    "joropo": 0.2
+   },
+   "perfil": {
+    "int": [
+     0.75,
+     0.28,
+     1.5
+    ],
+    "bril": [
+     1900,
+     600,
+     1
+    ],
+    "dens": [
+     8,
+     2.5,
+     1
+    ],
+    "reg": [
+     0.6,
+     0.3,
+     2
+    ],
+    "tono": [
+     0.4,
+     0.5,
+     0.4
+    ],
+    "sost": [
+     0.8,
+     0.3,
+     0.5
+    ],
+    "bajo": [
+     0.45,
+     0.3,
+     1
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 1,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.8,
+     "patrones": {
+      "1": "X.X.",
+      "2": "XXXX",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.95,
+     "patrones": {
+      "1": "....",
+      "2": "..XX",
+      "3": "XX.X"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.6,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  },
+  "cristiana": {
+   "nombre": "Música cristiana",
+   "bpm": [
+    96,
+    116
+   ],
+   "menor": 0.3,
+   "swing": 0,
+   "energia": {
+    "intro": 0.3,
+    "verso": 0.5,
+    "preestribillo": 0.7,
+    "estribillo": 0.9,
+    "puente": 0.45,
+    "solo": 0.75,
+    "outro": 0.25
+   },
+   "estructura": [
+    [
+     "Intro",
+     "intro",
+     1
+    ],
+    [
+     "Verso 1",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Verso 2",
+     "verso",
+     3
+    ],
+    [
+     "Estribillo",
+     "estribillo",
+     3
+    ],
+    [
+     "Puente",
+     "puente",
+     1.5
+    ],
+    [
+     "Solo",
+     "solo",
+     1.5
+    ],
+    [
+     "Estribillo final",
+     "estribillo",
+     3
+    ],
+    [
+     "Final",
+     "outro",
+     1.5
+    ]
+   ],
+   "instrumentos": {
+    "piano": 1,
+    "guitarra": 0.9,
+    "electronicos": 0.5,
+    "guitarra_electrica": 0.5,
+    "flauta": 0.5,
+    "tambores": 0.5,
+    "trompeta": 0.3
+   },
+   "perfil": {
+    "int": [
+     0.5,
+     0.3,
+     1
+    ],
+    "bril": [
+     1500,
+     500,
+     1
+    ],
+    "dens": [
+     7,
+     3,
+     1
+    ],
+    "reg": [
+     0.8,
+     0.25,
+     1
+    ],
+    "tono": [
+     0.6,
+     0.4,
+     1
+    ],
+    "sost": [
+     0.9,
+     0.25,
+     0.7
+    ],
+    "bajo": [
+     0.4,
+     0.3,
+     0.5
+    ]
+   },
+   "pistas": [
+    {
+     "rol": "ritmo",
+     "n": 1,
+     "nivel": 0.7,
+     "patrones": {
+      "1": "....",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "base",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "XXXX"
+     }
+    },
+    {
+     "rol": "armonia",
+     "n": 1,
+     "nivel": 0.9,
+     "patrones": {
+      "1": "X...",
+      "2": "X.X.",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "melodia",
+     "n": 1,
+     "nivel": 0.85,
+     "patrones": {
+      "1": "....",
+      "2": "XX..",
+      "3": "X.XX"
+     }
+    },
+    {
+     "rol": "adorno",
+     "n": 1,
+     "nivel": 0.5,
+     "patrones": {
+      "1": "....",
+      "2": "...X",
+      "3": "..XX"
+     }
+    }
+   ]
+  }
+ }
+}

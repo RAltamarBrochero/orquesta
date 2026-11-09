@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORQUESTA · crea música</title>
+<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+<header>
+  <h1>ORQ<span>UESTA</span></h1>
+  <p id="resumenBib">Cargando biblioteca…</p>
+</header>
+<main>
+  <div id="avisoServidor" class="aviso" hidden>⚠ Abriste el archivo directamente. Para que suenen los audios abre la aplicación con el servidor: doble clic en <b>iniciar.bat</b> (o ejecuta <code>python servidor.py</code>) y entra a <b>http://127.0.0.1:8000</b>.</div>
+
+  <section class="card">
+    <h2>1 · Elige el estilo</h2>
+    <div class="chips" id="chipsEstilo"></div>
+  </section>
+
+  <section class="card">
+    <h2>2 · Mejoras (opcionales)</h2>
+    <div class="fx" id="efectos"></div>
+    <details style="margin-top:12px"><summary>Instrumentos a usar</summary>
+      <div class="chips" id="chipsInst"></div>
+    </details>
+  </section>
+
+  <button id="crear" disabled>🎼 CREAR MÚSICA</button>
+  <div id="estado"></div>
+
+  <section class="card" id="reproductor" hidden>
+    <div class="titulo" id="tituloCancion"></div>
+    <div class="sub" id="subCancion"></div>
+    <input type="range" id="barra" min="0" max="300" step="0.1" value="0">
+    <div class="ctl">
+      <button id="btnPlay">▶ Reproducir</button><button id="btnStop">⏹</button>
+      <span class="tiempo" id="tiempo">0:00 / 5:00</span><span class="grow"></span>
+      <button id="btnLike" title="Me gustó: la orquesta aprende">👍</button><button id="btnDislike" title="No me gustó: la orquesta aprende">👎</button>
+    </div>
+    <div class="ctl">
+      <button id="btnGuardar">💾 Guardar melodía</button>
+      <select id="formato"><option value="wav">Audio WAV (5:00)</option><option value="mp3">Audio MP3 (5:00)</option><option value="receta">Receta (.json)</option><option value="memoria">Memoria (.txt)</option></select>
+      <button id="btnDescargar" class="pri">⬇ Descargar</button>
+      <span class="grow"></span>
+      <input type="number" id="semilla" min="1" placeholder="Semilla (opcional)" style="width:160px" title="Con la misma semilla se repite la misma canción">
+      <button id="btnRepetir" title="Usar la semilla de esta canción">🔁</button>
+    </div>
+    <div class="prog" id="progDesc" hidden><i></i></div>
+  </section>
+
+  <section class="card" id="cardMemoria" hidden>
+    <details open><summary>🧠 Memoria de la melodía (numeraciones, compás y ritmo matemático)</summary>
+      <pre id="memoria"></pre>
+      <div class="ctl"><button id="copiarMem">Copiar</button><button id="bajarMem">Descargar .txt</button></div>
+    </details>
+  </section>
+
+  <section class="card">
+    <details id="detBib"><summary>📚 Biblioteca de audios</summary>
+      <div id="biblioteca"></div>
+      <div class="ctl"><button id="btnActualizar">🔄 Buscar audios nuevos</button><span class="sub" id="msgActualizar"></span></div>
+      <details style="margin-top:10px"><summary>Audios descartados (vacíos o repetidos)</summary><div id="descartados"></div></details>
+    </details>
+  </section>
+
+  <section class="card">
+    <details id="detMel"><summary>🎧 Mis melodías guardadas</summary><div id="misMelodias"></div></details>
+  </section>
+</main>
+<script src="js/motor.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

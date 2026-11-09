@@ -1,0 +1,20 @@
+{
+  "capacidad": 2500,
+  "_ayuda": "Cada instrumento = una carpeta con audios numerados (prefijo + número: p1.mp3, p2.mp3...). Para activar un instrumento nuevo basta crear su carpeta, meter los audios y ejecutar analizar.py. Si la carpeta no está aquí, igual se detecta sola.",
+  "instrumentos": {
+    "piano":              {"nombre": "Piano",             "carpetas": ["pianos", "piano"],                 "prefijos": ["p", "pin", "pia"],   "roles": ["armonia", "melodia", "base"]},
+    "trompeta":           {"nombre": "Trompeta",          "carpetas": ["trompetas", "trompeta"],           "prefijos": ["t", "trom"],         "roles": ["melodia", "adorno"]},
+    "timbales":           {"nombre": "Timbales",          "carpetas": ["timbales", "timbal"],              "prefijos": ["tim"],               "roles": ["ritmo", "adorno"]},
+    "tambores":           {"nombre": "Tambores",          "carpetas": ["tambores", "tambor"],              "prefijos": ["tam"],               "roles": ["ritmo", "base"]},
+    "guitarra":           {"nombre": "Guitarra",          "carpetas": ["guitarras", "guitarra"],           "prefijos": ["guit", "gui"],       "roles": ["armonia", "base", "melodia"]},
+    "guitarra_electrica": {"nombre": "Guitarra eléctrica","carpetas": ["electricas", "electrica", "guitarras_electricas"], "prefijos": ["electri", "electric", "ge"], "roles": ["melodia", "armonia"]},
+    "flauta":             {"nombre": "Flauta",            "carpetas": ["flautas", "flauta"],               "prefijos": ["f", "fl", "flau"],   "roles": ["melodia", "adorno"]},
+
+    "xilofono":           {"nombre": "Xilófono",          "carpetas": ["xilofonos", "xilofono"],           "prefijos": ["xil"],               "roles": ["melodia", "adorno"]},
+    "marimba":            {"nombre": "Marimba",           "carpetas": ["marimbas", "marimba"],             "prefijos": ["mar", "mari"],       "roles": ["melodia", "armonia"]},
+    "acordeon":           {"nombre": "Acordeón",          "carpetas": ["acordeones", "acordeon"],          "prefijos": ["acor", "aco"],       "roles": ["armonia", "melodia"]},
+    "redoblante":         {"nombre": "Redoblante",        "carpetas": ["redoblantes", "redoblante"],       "prefijos": ["redo"],              "roles": ["ritmo", "adorno"]},
+    "joropo":             {"nombre": "Joropo",            "carpetas": ["joropo", "joropos"],               "prefijos": ["jor"],               "roles": ["ritmo", "armonia", "melodia"]},
+    "electronicos":       {"nombre": "Electrónicos",      "carpetas": ["electronicos", "electronico"],     "prefijos": ["elec", "elx"],       "roles": ["base", "armonia", "adorno"]}
+  }
+}
