@@ -24,6 +24,7 @@
   const apr = Object.assign({ clips: {}, pares: {}, inst: {} }, LS.get("orq_apr", {}));
   let historial = LS.get("orq_hist", []);
   const instOff = new Set(LS.get("orq_instoff", []));
+  let mio = Object.assign({ activo: false, sel: [], principal: null }, LS.get("orq_combo", {}));      // modo «Elijo yo»
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   function estado(t, tipo) { const e = $("estado"); e.textContent = t; e.className = tipo || ""; }
@@ -46,7 +47,7 @@
     pintarTodo();
     $("crear").disabled = false;
   }
-  function pintarTodo() { resumen(); pintarEstilos(); pintarEfectos(); pintarInstrumentos(); pintarBiblioteca(); pintarMelodias(); }
+  function pintarTodo() { resumen(); pintarEstilos(); pintarEfectos(); pintarInstrumentos(); pintarCombo(); pintarBiblioteca(); pintarMelodias(); }
   function resumen() {
     const act = Object.values(cat.instrumentos).filter((i) => i.activos > 0), tot = act.reduce((a, i) => a + i.activos, 0);
     $("resumenBib").textContent = `${act.length} instrumentos con audios · ${tot} sonidos activos · ${cat.descartados.length} descartados · capacidad ${cat.capacidad} por instrumento`;
@@ -78,6 +79,50 @@
       box.appendChild(b);
     });
   }
+  /* ───────────── solo o combinación de instrumentos ───────────── */
+  const vivos = () => Object.entries(cat.instrumentos).filter(([, i]) => i.activos > 0).map(([k]) => k);
+  const nombreInst = (k) => (cat.instrumentos[k] || {}).nombre || k;
+  const guardarMio = () => LS.set("orq_combo", mio);
+  function pintarCombo() {
+    const v = vivos();
+    mio.sel = mio.sel.filter((k) => v.includes(k));
+    if (!mio.sel.includes(mio.principal)) mio.principal = mio.sel[0] || null;
+    $("modoAuto").classList.toggle("on", !mio.activo); $("modoMio").classList.toggle("on", mio.activo);
+    $("panelAuto").hidden = mio.activo; $("panelMio").hidden = !mio.activo;
+    const grid = $("gridMio"); grid.innerHTML = "";
+    Object.entries(cat.instrumentos).forEach(([k, i]) => {
+      const b = document.createElement("button"), vivo = i.activos > 0, on = mio.sel.includes(k);
+      b.className = "chip" + (on ? " on" : "") + (vivo ? "" : " vacio") + (on && k === mio.principal ? " lead" : "");
+      b.textContent = (on && k === mio.principal ? "⭐ " : on ? "✓ " : "") + i.nombre + (vivo ? "" : " · próximamente");
+      b.onclick = () => {
+        if (!vivo) return;
+        on ? (mio.sel = mio.sel.filter((x) => x !== k)) : mio.sel.push(k);
+        guardarMio(); pintarCombo();
+      };
+      grid.appendChild(b);
+    });
+    const solo = $("soloBtns"); solo.innerHTML = "";
+    v.forEach((k) => { const b = document.createElement("button"); b.className = "chip"; b.textContent = nombreInst(k); b.onclick = () => { mio.sel = [k]; mio.principal = k; guardarMio(); pintarCombo(); }; solo.appendChild(b); });
+    const sp = $("selPrincipal");
+    sp.innerHTML = mio.sel.length ? mio.sel.map((k) => `<option value="${k}" ${k === mio.principal ? "selected" : ""}>${esc(nombreInst(k))}</option>`).join("") : '<option value="">(elige instrumentos)</option>';
+    const ac = $("acompBtns"); ac.innerHTML = "";
+    for (let n = 1; n <= v.length - 1; n++) {
+      const b = document.createElement("button"); b.className = "chip"; b.textContent = n === v.length - 1 ? `todos (${n})` : String(n);
+      b.onclick = () => {
+        const p = mio.principal && v.includes(mio.principal) ? mio.principal : v[(Math.random() * v.length) | 0];
+        const otros = v.filter((k) => k !== p).sort(() => Math.random() - 0.5).slice(0, n);
+        mio.sel = [p, ...otros]; mio.principal = p; guardarMio(); pintarCombo();
+      };
+      ac.appendChild(b);
+    }
+    $("resumenCombo").textContent = mio.sel.length
+      ? "Combinación: " + mio.sel.map((k) => (k === mio.principal ? "⭐ " : "") + nombreInst(k)).join(" + ") + ` (${mio.sel.length} de ${v.length})`
+      : "Aún no elegiste instrumentos.";
+  }
+  $("modoAuto").onclick = () => { mio.activo = false; guardarMio(); pintarCombo(); };
+  $("modoMio").onclick = () => { mio.activo = true; guardarMio(); pintarCombo(); };
+  $("selPrincipal").onchange = (e) => { if (e.target.value) { mio.principal = e.target.value; guardarMio(); pintarCombo(); } };
+
   const instSel = () => { const v = Object.entries(cat.instrumentos).filter(([k, i]) => i.activos > 0 && !instOff.has(k)).map(([k]) => k); return v; };
 
   /* ───────────── CREAR MÚSICA ───────────── */
@@ -87,12 +132,14 @@
     try {
       rep.parar(false); ultimoRender = null;
       const sel = instSel();
-      if (!sel.length) throw new Error("Activa al menos un instrumento con audios.");
+      if (mio.activo && !mio.sel.length) throw new Error("Toca al menos un instrumento en «Elijo yo», o vuelve a «La orquesta decide».");
+      if (!mio.activo && !sel.length) throw new Error("Activa al menos un instrumento con audios.");
       const k = estilo || Object.keys(cfg.estilos)[(Math.random() * Object.keys(cfg.estilos).length) | 0];
       const semilla = +$("semilla").value || 0;
       estado("Componiendo la estructura…");
       await new Promise((r) => setTimeout(r, 30));
-      cancion = O.componerNueva(bib, k, { semilla, instrumentos: sel, aprendizaje: apr }, semilla ? null : historial);
+      const pedido = mio.activo ? { semilla, conjunto: mio.sel.slice(), principal: mio.principal, aprendizaje: apr } : { semilla, instrumentos: sel, aprendizaje: apr };
+      cancion = O.componerNueva(bib, k, pedido, semilla ? null : historial);
       historial.push(cancion.hash); historial = historial.slice(-300); LS.set("orq_hist", historial);
       await prepararYSonar();
     } catch (e) { estado("✖ " + e.message, "err"); }
@@ -110,7 +157,7 @@
   function mostrarCancion() {
     $("reproductor").hidden = false; $("cardMemoria").hidden = false;
     $("tituloCancion").textContent = `${cancion.estiloNombre} · ${cancion.bpm} BPM · ${cancion.tonalidad.raiz} ${cancion.tonalidad.modo} · ${cancion.compas}`;
-    $("subCancion").textContent = `Semilla ${cancion.semilla} · ${cancion.pistas.map((p) => p.nombreInst).filter((v, i, a) => a.indexOf(v) === i).join(", ")}`;
+    $("subCancion").textContent = `Semilla ${cancion.semilla} · ${cancion.combo ? "Combinación elegida: " : ""}${cancion.pistas.map((p) => p.nombreInst).filter((v, i, a) => a.indexOf(v) === i).join(" + ")}`;
     $("memoria").textContent = O.memoria(cancion, bib);
     $("barra").max = cancion.duracion; $("barra").value = 0;
   }

@@ -39,3 +39,10 @@ table{width:100%;border-collapse:collapse;font-size:.82rem} td,th{padding:5px 6p
 .mel{display:flex;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #1d2a47;font-size:.9rem;flex-wrap:wrap}
 .mel b{flex:1;min-width:160px}
 @media(max-width:620px){.inst{grid-template-columns:1fr}}
+
+/* modo de instrumentos */
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.seg button{flex:1;min-width:200px;padding:11px}
+.seg button.on{background:var(--b);color:#06202e;border-color:var(--b);font-weight:700}
+.chip.lead{outline:2px solid var(--a)}
+#resumenCombo{color:var(--a)}

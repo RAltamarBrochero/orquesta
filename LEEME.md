@@ -13,8 +13,9 @@ solo tus audios. Todo funciona en tu computador, sin internet y sin volver a con
 ## 2. Cómo se usa
 1. Elige un estilo (o déjalo sin elegir = sorpresa 🎲).
 2. Marca las mejoras que quieras: **Eco**, **Reverb**, **Retro**, **Autotune**, **Sonido HD**.
-3. Pulsa **CREAR MÚSICA**. Puedes pausar, saltar en la barra, 💾 guardar, ⬇ descargar (WAV, MP3, receta o memoria) y votar 👍/👎.
-4. La sección **Memoria** muestra la estructura, el compás/ritmo matemático y la numeración de audios usada en cada casilla.
+3. **Instrumentos (nuevo):** deja «La orquesta decide» o pulsa **🎛 Elijo yo** para escoger tú: *solo* un instrumento (por ejemplo «Solo Tambores»), o una combinación (Tambores + Flauta, Piano + Trompeta + Guitarra…) hasta con todos los instrumentos que tengan audios. **Todos los que marques suenan**; el ⭐ principal lleva la melodía. Los botones «acompañado por 1, 2, 3… todos» escogen los acompañantes al azar (púlsalos de nuevo para otra combinación). Un instrumento solo toca dos capas (principal + contracanto) para que no suene vacío. Los instrumentos «próximamente» se activan solos cuando metas sus audios.
+4. Pulsa **CREAR MÚSICA**. Puedes pausar, saltar en la barra, 💾 guardar, ⬇ descargar (WAV, MP3, receta o memoria) y votar 👍/👎.
+5. La sección **Memoria** muestra la estructura, el compás/ritmo matemático y la numeración de audios usada en cada casilla.
 
 ## 3. Cómo agregar audios (hasta 2.500 por instrumento)
 - Cada instrumento es una carpeta y sus audios van numerados con un prefijo: `p1.mp3, p2.mp3 …` (piano), `t1…` (trompeta), `tim1…`, `tam1…`, `guit1…`, `electri1…`, `f1…`.

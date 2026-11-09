@@ -22,9 +22,24 @@
   <section class="card">
     <h2>2 · Mejoras (opcionales)</h2>
     <div class="fx" id="efectos"></div>
-    <details style="margin-top:12px"><summary>Instrumentos a usar</summary>
+  </section>
+
+  <section class="card" id="cardInst">
+    <h2>3 · Instrumentos: solo o combinados</h2>
+    <div class="seg"><button id="modoAuto" class="on">🎼 La orquesta decide</button><button id="modoMio">🎛 Elijo yo (solo o combinación)</button></div>
+    <div id="panelAuto">
+      <div class="sub">La orquesta escoge los instrumentos que mejor van con el estilo. Apaga los que no quieras que use:</div>
       <div class="chips" id="chipsInst"></div>
-    </details>
+    </div>
+    <div id="panelMio" hidden>
+      <div class="sub">Toca los instrumentos que quieres oír: <b>todos los que marques suenan</b>. El principal (⭐) lleva la melodía.</div>
+      <div class="chips" id="gridMio"></div>
+      <div class="ctl"><b>Solo:</b> <span class="chips" id="soloBtns"></span></div>
+      <div class="ctl"><b>Principal:</b> <select id="selPrincipal"></select>
+        <b>acompañado por:</b> <span class="chips" id="acompBtns"></span></div>
+      <div class="sub">Los botones «acompañado por» escogen al azar los acompañantes; púlsalos de nuevo para otra combinación.</div>
+      <div id="resumenCombo" class="titulo" style="margin-top:8px"></div>
+    </div>
   </section>
 
   <button id="crear" disabled>🎼 CREAR MÚSICA</button>

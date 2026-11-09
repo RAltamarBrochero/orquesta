@@ -163,6 +163,37 @@
     return elegidos;
   }
 
+  /* ───────────── Conjunto elegido por el usuario («Solo tambor», «piano + flauta», hasta todos) ─────────────
+     Todos los instrumentos elegidos suenan. El instrumento principal (⭐) lleva la melodía y está presente
+     desde la intro; los demás lo acompañan con el rol que mejor les va (ritmo, base, armonía, adorno).
+     Un instrumento solo toca dos capas (principal + contracanto) para que no suene vacío. */
+  const mkP = (rol, p1, p2, p3, nivel) => ({ rol, n: 1, nivel, patrones: { "1": p1, "2": p2, "3": p3 } });
+  const DEF_PLANTILLA = { ritmo: mkP("ritmo", "X.X.", "XXXX", "XXXX", 1), base: mkP("base", "X...", "X.X.", "XXXX", 0.85), armonia: mkP("armonia", "X...", "X.X.", "X.XX", 0.85), melodia: mkP("melodia", "....", "XX..", "X.XX", 0.85), adorno: mkP("adorno", "....", "...X", "..XX", 0.6) };
+  function asignarConjunto(bib, est, conjunto, principal) {
+    const ORD = ["ritmo", "base", "armonia", "melodia", "adorno"];
+    const rolesDe = (k) => { const r = (bib.inst[k].roles || []).filter((x) => ORD.includes(x)); return r.length ? r : ["armonia", "melodia"]; };
+    const lead = principal && conjunto.includes(principal) ? principal : (conjunto.find((k) => rolesDe(k).includes("melodia")) || conjunto[0]);
+    const orden = [lead].concat(conjunto.filter((k) => k !== lead).sort((a, b) => rolesDe(a).length - rolesDe(b).length));
+    const cuenta = {}, out = [];
+    const plantilla = (rol, esLead, aporte) => {
+      const pl = JSON.parse(JSON.stringify(est.pistas.find((p) => p.rol === rol) || DEF_PLANTILLA[rol]));
+      if (esLead) { pl.patrones = { "1": "X.X.", "2": "XXX.", "3": "XXXX" }; pl.nivel = 1; pl.entrada = 0; }
+      else { pl.nivel = Math.min(pl.nivel, 0.9) * (aporte ? 0.8 : 1); pl.entrada = Math.min(ENTRADA[rol] ?? 0.3, 0.35); }
+      return pl;
+    };
+    orden.forEach((k) => {
+      const esLead = k === lead, rs = rolesDe(k);
+      const rol = esLead && rs.includes("melodia") ? "melodia" : rs.slice().sort((a, b) => (cuenta[a] || 0) - (cuenta[b] || 0) || rs.indexOf(a) - rs.indexOf(b))[0];
+      cuenta[rol] = (cuenta[rol] || 0) + 1;
+      out.push({ k, pl: plantilla(rol, esLead, false) });
+    });
+    if (conjunto.length === 1) {                                         // solo: segunda capa de contracanto
+      const k = conjunto[0], rs = rolesDe(k), otro = rs.find((r) => r !== out[0].pl.rol) || "adorno";
+      out.push({ k, pl: plantilla(otro, false, true) });
+    }
+    return out;
+  }
+
   /* ───────────── COMPONER ───────────── */
   function componer(bib, estiloKey, opts) {
     opts = opts || {};
@@ -172,7 +203,10 @@
     const semilla = (opts.semilla >>> 0) || ((Math.random() * 4294967295) >>> 0);
     const rnd = mulberry32(semilla), eIdx = bib.estiloIdx[estiloKey];
     const permitidos = opts.instrumentos && opts.instrumentos.length ? opts.instrumentos : null;
-    const disponibles = bib.activos().filter((k) => !permitidos || permitidos.includes(k));
+    const conjunto = (opts.conjunto || []).filter((k, i, a) => bib.activos().includes(k) && a.indexOf(k) === i);
+    const exacto = conjunto.length > 0;                                  // «Elijo yo»: todos los elegidos suenan
+    if ((opts.conjunto || []).length && !exacto) throw new Error("Los instrumentos elegidos no tienen audios todavía.");
+    const disponibles = exacto ? conjunto : bib.activos().filter((k) => !permitidos || permitidos.includes(k));
     if (!disponibles.length) throw new Error("No hay audios disponibles para componer. Revisa las carpetas y ejecuta analizar.py.");
 
     // 1. tempo → casilla
@@ -183,7 +217,7 @@
     const secciones = planSecciones(est, total, slot, rnd);
 
     // 3. instrumentos
-    const elegidos = elegirInstrumentos(bib, est, estiloKey, est.pistas, disponibles, apr, rnd);
+    const elegidos = exacto ? asignarConjunto(bib, est, conjunto, opts.principal) : elegirInstrumentos(bib, est, estiloKey, est.pistas, disponibles, apr, rnd);
     const pistas = elegidos.map((e, i) => ({
       id: i, rol: e.pl.rol, instrumento: e.k, nombreInst: bib.inst[e.k].nombre, nivel: e.pl.nivel,
       pan: clamp((PAN_BASE[e.pl.rol] || 0) * (i % 2 ? -1 : 1) + (rnd() - 0.5) * 0.2, -0.8, 0.8),
@@ -207,7 +241,7 @@
       const anchor = arm ? paleta(arm, sec.tipo, sec.energia, null)[0].chromaV : null;
       if (!anclaTono && arm) anclaTono = paleta(arm, sec.tipo, sec.energia, null)[0];
       orden.forEach((p) => {
-        if (sec.energia < ENTRADA[p.rol]) return;
+        if (sec.energia < (p.plantilla.entrada ?? ENTRADA[p.rol])) return;
         const lvl = sec.energia < 0.45 ? "1" : sec.energia < 0.8 ? "2" : "3";
         const patron = p.plantilla.patrones[lvl];
         const pal = paleta(p, sec.tipo, sec.energia, anchor);
@@ -258,6 +292,7 @@
       version: 2, semilla, estilo: estiloKey, estiloNombre: est.nombre, bpm, r, slot, totalSlots: total, duracion: bib.duracion,
       compas: "4/4", tonalidad: { raiz: NOMBRES_NOTAS[raiz], modo: menor ? "menor" : "mayor", escala },
       secciones, energia: energiaSlot, hash,
+      combo: exacto ? { principal: elegidos[0].k, instrumentos: conjunto } : null,
       pistas: pistas.map((p) => ({ id: p.id, rol: p.rol, instrumento: p.instrumento, nombreInst: p.nombreInst, nivel: p.nivel, pan: p.pan, patrones: p.plantilla.patrones, slots: p.slots }))
     };
   }
@@ -292,6 +327,7 @@
     const L = [];
     const cas = (c.slot).toFixed(3);
     L.push(`ORQUESTA · MEMORIA DE LA MELODÍA`, `Estilo: ${c.estiloNombre}   Semilla: ${c.semilla}   Huella: ${c.hash.toString(16)}`, "");
+    if (c.combo) L.push(`Instrumentos elegidos (todos suenan): ${c.combo.instrumentos.map((k) => (bib.inst[k] || {}).nombre || k).join(" + ")} · principal: ${(bib.inst[c.combo.principal] || {}).nombre || c.combo.principal}`, "");
     L.push("RITMO MATEMÁTICO");
     L.push(`  Tempo: ${c.bpm} BPM  →  r = BPM/120 = ${c.r.toFixed(3)} (velocidad relativa de los audios)`);
     L.push(`  1 casilla = 1 frase de audio = 2 tiempos = 1/r = ${cas} s`);
@@ -329,6 +365,6 @@
   }
 
   G.Orquesta = G.Orquesta || {};
-  Object.assign(G.Orquesta, { Biblioteca, componer, componerNueva, aprender, memoria, compatChroma, mmss, NOMBRES_NOTAS, ROLES_NOMBRE });
+  Object.assign(G.Orquesta, { Biblioteca, componer, asignarConjunto, componerNueva, aprender, memoria, compatChroma, mmss, NOMBRES_NOTAS, ROLES_NOMBRE });
   if (typeof module !== "undefined") module.exports = G.Orquesta;
 })(typeof window !== "undefined" ? window : globalThis);
